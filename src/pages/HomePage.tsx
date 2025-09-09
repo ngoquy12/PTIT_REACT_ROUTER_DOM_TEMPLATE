@@ -1,4 +1,5 @@
 // src/pages/HomePage.jsx
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { courses } from "../db";
 
@@ -26,7 +27,7 @@ const HomePage = () => {
             <div key={course.id} className="course-card">
               <h3>
                 {/* Dùng thẻ <a> thay cho Link */}
-                <a href="#">{course.title}</a>
+                <Link to={`/cources/${course.id}`}>{course.title}</Link>
               </h3>
               <p>{course.description}</p>
               <span className="topic-badge">{course.topic}</span>

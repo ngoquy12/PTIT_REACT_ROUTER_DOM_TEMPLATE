@@ -6,7 +6,7 @@ export const courses = [
     description:
       "Học những kiến thức cơ bản nhất về ReactJS để xây dựng ứng dụng web hiện đại.",
     topic: "Frontend",
-  },
+  }, 
   {
     id: 2,
     slug: "nodejs-express",

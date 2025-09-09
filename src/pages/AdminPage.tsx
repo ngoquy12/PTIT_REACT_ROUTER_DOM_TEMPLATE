@@ -1,3 +1,4 @@
+import { Navigate, Outlet } from "react-router-dom";
 import { courses } from "../db";
 
 const Sidebar = () => (
@@ -18,7 +19,9 @@ const Sidebar = () => (
 );
 
 const AdminPage = () => {
-  return (
+  // Mô phỏng người dùng đã đăng nhập: Dữ liệu lưu trên local, coookie, session
+  const isLogin = false
+  return isLogin ? (
     <div className="admin-layout">
       <Sidebar />
       <main className="admin-content">
@@ -29,9 +32,10 @@ const AdminPage = () => {
           Hiện có tổng cộng <strong>{courses.length}</strong> khóa học trong hệ
           thống.
         </p>
+        <Outlet/>
       </main>
     </div>
-  );
+  ) : (<Navigate to={"/login"}/>)
 };
 
 export default AdminPage;
